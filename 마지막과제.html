@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width: 700px;
+            height: 500px;
+            position: relative;
+            margin: auto;
+            border: 5px solid black;
+        }
+        
+        input{
+            width: 50px;
+            height: 20px;
+            font-size: 20px;
+            text-align: right;
+        }
+        button{
+            width: 50px;
+            height: 20px;
+        }
+    </style>
+    <script>
+        var xpos;
+        var ypos;
+
+        var ball;
+        var bt;
+
+        var a = 0.1;
+        var st;
+        var flag= true;
+
+        var targetX;
+        var targetY;
+
+        window.addEventListener("load", function(){
+            init();
+            setInterval("move()", 10);
+            // st = setInterval("move()", 10);
+            
+            
+        });
+
+        function init(){
+            ball = document.createElement("div");
+            ball.style.background = "yellow";
+            ball.style.position = "absolute";
+            ball.style.left = 50+"px";
+            ball.style.top = 50+"px";
+            ball.style.width = 50+"px";
+            ball.style.height = 50+"px";
+            ball.style.borderRadius = 50+"%";
+            
+            bt = document.getElementById("bt");
+            bt2 = document.getElementById("bt2");
+
+            xpos = document.getElementById("xpos");
+            ypos = document.getElementById("ypos");
+
+            
+
+            document.getElementById("wrapper").appendChild(ball);
+
+            bt.addEventListener("click", function(){
+                
+                targetX=xps.value;
+                targetY=ypos.value;
+                
+                
+            });
+
+            // bt2.addEventListener("click", function(){
+            //     clearInterval(st);
+                
+            // });
+        }
+
+        function move(){
+            
+            ball.style.left = parseInt(ball.style.left)+a*(parseInt(targetX)-parseInt(ball.style.left))+"px";
+            ball.style.top = parseInt(ball.style.top)+a*(parseInt(targetY)-parseInt(ball.style.top))+"px";
+
+            console.log(parseInt(ball.style.left)+a*(parseInt(targetX)-parseInt(ball.style.left)));
+                 
+        }
+
+        
+    </script>
+</head>
+
+<body>
+        <div id = "wrapper">
+            <input id = "xpos" type = "text"/>
+            <input id = "ypos" type = "text"/>
+            <button id ="bt">실행</button>
+            <!-- <button id ="bt2">멈추</button> -->
+        </div>
+</body>
+</html>

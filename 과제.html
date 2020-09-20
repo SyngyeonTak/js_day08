@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function getResult(){
+            var year = document.getElementById("year");    
+            var month = document.getElementById("month");    
+            var day = document.getElementById("day");    
+
+            var result = document.getElementById("result");
+            
+            if(month.value.length == 1){
+                month.value = 0+month.value;
+            }
+            if(day.value.length == 1){
+                day.value = 0+day.value;
+
+            }
+
+            result.value = year.value+"년 "+month.value+"월 "+day.value+"일";
+        }
+    </script>
+</head>
+<body>
+    생년월일
+    <input id ="year" type = "text" />년
+    <input id ="month" type = "text" />월
+    <input id ="day" type = "text" />일
+    <br><br>
+    <button onclick = "getResult()">등록</button>
+    <input id = "result" type = "text">
+
+</body>
+</html>
